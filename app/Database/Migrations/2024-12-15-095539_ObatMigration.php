@@ -13,7 +13,6 @@ class ObatMigration extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 10,
                 'null' => false,
-                'unique' => true,
             ],
             'namaobat' => [
                 'type' => 'VARCHAR',
