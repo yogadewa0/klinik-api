@@ -24,21 +24,21 @@ class UsersModel extends Model
 
     protected $validationMessages = [
         'username' => [
-            'required' => 'Username is required.',
-            'is_unique' => 'This username is already taken.'
+            'required' => 'Username masih kosong.',
+            'is_unique' => 'Username sudah digunakan.'
         ],
         'password' => [
-            'required' => 'Password is required.',
-            'min_length' => 'Password must be at least 6 characters long.'
+            'required' => 'Password masih kosong.',
+            'min_length' => 'Password minimal 6 karakter.'
         ],
         'nama' => [
-            'required' => 'Name is required.'
+            'required' => 'Nama masih kosong.'
         ],
         'alamat' => [
-            'required' => 'Address is required.'
+            'required' => 'Alamat masih kosong.'
         ],
         'no_telp' => [
-            'required' => 'Phone number is required.'
+            'required' => 'Nomor telepon masih kosong.'
         ]
     ];
 }
