@@ -117,6 +117,6 @@ class ObatController extends ResourceController
             return $this->failNotFound('Obat not found');
         }
         $this->model->delete($kodeobat);
-        return $this->respondDeleted(['kodeobat' => $kodeobat]);
+        return $this->respondDeleted('Obat '. $kodeobat . ' dihapus.');
     }
 }
