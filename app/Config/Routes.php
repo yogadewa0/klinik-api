@@ -17,4 +17,7 @@ $routes->group('api', function($routes) {
 
     //Obat Management
     $routes->resource('obat', ['controller' => 'Api\ObatController']);
+
+    //Pasien Management
+    $routes->resource('pasien', ['controller' => 'Api\PasienController']);
 });
