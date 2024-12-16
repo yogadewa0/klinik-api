@@ -1,68 +1,115 @@
-# CodeIgniter 4 Application Starter
 
-## What is CodeIgniter?
+<h1 align="center" style="font-weight: bold;">API REPUBLIK MANTRI 💻</h1>
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+<p align="center">
+<a href="#tech">Technologies</a>
+<a href="#started">Getting Started</a>
+<a href="#routes">API Endpoints</a>
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+ 
+</p>
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+<p align="center">Ini adalah project BackEnd berbasis RESTful API menggunakan framework Code Igniter 4, sebagai pemenuhan tugas kuliah MatKul REST API & Proyek Informatika</p>
 
-## Installation & updates
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+<p align="center">
+<a href="https://github.com/yogadewa0/klinik-api">📱 Visit this Project</a>
+</p>
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+<h2 id="technologies">💻 Technologies</h2>
 
-## Setup
+- Code Igniter 4
+- Xampp
+- MySql
+- Fonnte
+- Postman
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+<h2 id="started">🚀 Getting started</h2>
 
-## Important Change with index.php
+Pertama - tama anda bisa melakukan fork untuk menyimpan salinan repo ini di repo github anda atau anda bisa langsung melakukan clone untuk menyimpan repo ini secara local.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Kemudian anda bisa menjalankan migrasi dan seed, untuk mempersiapkan database yang akan digunakan, kemudian anda bisa menggunakan `php spark serve` untuk menjalankan server lokal yang akan menangani request dari postman.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Jangan lupa untuk menjalankan service MySql dan Apache pada XAMPP untuk handling databasenya.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+<h3>Prerequisites</h3>
 
-## Repository Management
+Here you list all prerequisites necessary for running your project. For example:
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- [Code Igniter 4](https://www.codeigniter.com/user_guide/installation/index.html)
+- [Fonnte](https://fonnte.com/)
+- [XAMPP](https://www.apachefriends.org/download.html)
+- [PostMan](https://www.postman.com/downloads/)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+<h3>Cloning</h3>
 
-## Server Requirements
+How to clone your project
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+```bash
+git clone https://github.com/yogadewa0/klinik-api.git
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+<h3>Starting</h3>
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+How to start your project
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+```bash
+cd {your-clone-dir}
+php spark serve
+```
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+<h2 id="routes">📍 API Endpoints</h2>
+
+Here you can list the main routes of your API, and what are their expected request bodies.
+​
+| route               | description                                          
+|----------------------|-----------------------------------------------------
+| <kbd>GET /authenticate</kbd>     | retrieves user info see [response details](#get-auth-detail)
+| <kbd>POST /authenticate</kbd>     | authenticate user into the api see [request details](#post-auth-detail)
+
+<h3 id="get-auth-detail">GET /authenticate</h3>
+
+**RESPONSE**
+```json
+{
+  "name": "Fernanda Kipper",
+  "age": 20,
+  "email": "her-email@gmail.com"
+}
+```
+
+<h3 id="post-auth-detail">POST /authenticate</h3>
+
+**REQUEST**
+```json
+{
+  "username": "fernandakipper",
+  "password": "4444444"
+}
+```
+
+**RESPONSE**
+```json
+{
+  "token": "OwoMRHsaQwyAgVoc3OXmL1JhMVUYXGGBbCTK0GBgiYitwQwjf0gVoBmkbuyy0pSi"
+}
+```
+
+<h2 id="colab">🤝 Collaborators</h2>
+
+<p>Special thank you for all people that contributed for this project.</p>
+<table>
+<tr>
+
+<td align="center">
+<a href="https://github.com/yogadewa0">
+<img src="https://avatars.githubusercontent.com/u/60734671?v=4&size=64" width="100px;" alt="Dewa Yoga Profile Picture"/><br>
+<sub>
+<b>Dewa Yoga</b>
+</sub>
+</a>
+</td>
+
+</tr>
+</table>
