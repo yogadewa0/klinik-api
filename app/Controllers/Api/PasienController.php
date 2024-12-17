@@ -4,6 +4,7 @@ namespace App\Controllers\Api;
 
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\RESTful\ResourceController;
+use App\ThirdParty\FonnteService;
 
 class PasienController extends ResourceController
 {
@@ -60,6 +61,14 @@ class PasienController extends ResourceController
 
         if (!$this->model->validate((array)$data)) {
             return $this->failValidationErrors($this->model->errors());
+        }
+
+        $fonnteService = new FonnteService();
+        $message = "Salam sehat " . $data->nama . " !!! \nTerima kasih telah mempercayakan klinik Republik Mantri sebagai tempat berobat anda.";
+        $result = $fonnteService->sendWelcomeMessage($data->no_telp, $message);
+
+        if (isset($result['error'])) {
+            return $this->fail($result['error']);
         }
 
         $this->model->insert($data);
